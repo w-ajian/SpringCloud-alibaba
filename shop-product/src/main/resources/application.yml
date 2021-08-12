@@ -14,3 +14,7 @@ spring:
         hbm2ddl:
           auto: update # jpa根据实体类自动创建数据表
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect # mysql语法方言
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 47.99.47.236:8848
