@@ -9,7 +9,7 @@ import javax.persistence.Id;
 
 @Entity(name = "shop_order")
 @Data
-public class Oredr {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long oid;//订单id

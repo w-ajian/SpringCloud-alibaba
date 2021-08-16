@@ -1,7 +1,7 @@
 package com.wenjianhaode.dao;
 
-import com.wenjianhaode.domain.po.Oredr;
+import com.wenjianhaode.domain.po.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrderDao extends JpaRepository<Oredr, Long> {
+public interface OrderDao extends JpaRepository<Order, Long> {
 }
