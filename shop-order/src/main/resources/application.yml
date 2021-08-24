@@ -1,5 +1,8 @@
 server:
   port: 8091
+#  tomcat:
+#    max-threads: 10 #tomcat的最大并发值修改为10,默认是200
+
 spring:
   application:
     name: service-order
@@ -18,6 +21,10 @@ spring:
     nacos:
       discovery:
         server-addr: 47.101.36.181:8818
+    sentinel:
+      transport:
+        port: 9999 #跟控制台交流的端口,随意指定一个未使用的端口即可
+        dashboard: 127.0.0.1:8080 # 指定控制台服务的地址
 
 service-product: # nacos调用的提供者的名称
   ribbon:
