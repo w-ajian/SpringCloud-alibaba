@@ -16,7 +16,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findByPid(Integer pid) {
-        return productDao.findById(pid).get();
-    }
 
+        return productDao.findById(pid).get();
+
+    }
 }
