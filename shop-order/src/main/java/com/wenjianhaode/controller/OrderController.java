@@ -5,6 +5,7 @@ import com.wenjianhaode.domain.po.Product;
 import com.wenjianhaode.service.OrderService;
 import com.wenjianhaode.service.ProductService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +31,9 @@ public class OrderController {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private RocketMQTemplate rocketMQTemplate;
+
     /**
      *  Fegin 整合 ribbon 实现高效率负载和代码简洁开发
      */
@@ -47,6 +51,9 @@ public class OrderController {
         order.setPprice(product.getPprice());
         order.setNumber(99);
         orderService.createOrder(order);
+
+        rocketMQTemplate.convertAndSend("");
+
         return order;
     }
 
