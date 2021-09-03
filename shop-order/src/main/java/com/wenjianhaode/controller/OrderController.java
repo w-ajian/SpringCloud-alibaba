@@ -52,7 +52,7 @@ public class OrderController {
         order.setNumber(99);
         orderService.createOrder(order);
 
-        rocketMQTemplate.convertAndSend("");
+        rocketMQTemplate.convertAndSend("order-topic",order);
 
         return order;
     }
